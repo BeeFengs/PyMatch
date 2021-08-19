@@ -10,9 +10,9 @@ import tkinter.messagebox
 from PIL import Image, ImageTk
 
 class MainWindow():
-	__gameTitle = "连连看游戏"
-	__windowWidth = 700
-	__windowHeigth = 500
+	__gameTitle = "python连连看"
+	__windowWidth = 500
+	__windowHeigth = 480
 	__icons = []
 	__gameSize = 10 # 游戏尺寸
 	__iconKind = __gameSize * __gameSize / 4 # 小图片种类数量
@@ -44,12 +44,12 @@ class MainWindow():
 		self.menubar = tk.Menu(self.root, bg="lightgrey", fg="black")
 
 		self.file_menu = tk.Menu(self.menubar, tearoff=0, bg="lightgrey", fg="black")
-		self.file_menu.add_command(label="新游戏", command=self.file_new, accelerator="Ctrl+N")
+		self.file_menu.add_command(label="新的游戏", command=self.file_new, accelerator="Ctrl+N")
 
-		self.menubar.add_cascade(label="游戏", menu=self.file_menu)
+		self.menubar.add_cascade(label="点击开始", menu=self.file_menu)
 		self.root.configure(menu=self.menubar)
 
-		self.canvas = tk.Canvas(self.root, bg = 'white', width = 450, height = 450)
+		self.canvas = tk.Canvas(self.root, bg = 'yellow', width = 450, height = 450)
 		self.canvas.pack(side=tk.TOP, pady = 5)
 		self.canvas.bind('<Button-1>', self.clickCanvas)
         
